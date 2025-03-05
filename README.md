@@ -313,3 +313,189 @@ ReactDOM.render(
 
 
 ```
+
+Class based styling is recommended over inline styling.
+
+#### Inline styling
+
+```javascript
+
+import React from "react";
+import ReactDOM from "react-dom";
+
+const customStyle = {
+  color: "red",
+  fontSize: "24px",
+  border: "2px solid blue",
+};
+
+customStyle.color = "green"
+
+ReactDOM.render(
+    <div>
+        <h1 style={customStyle}>Hello World!</h1>
+        <h2 style = {{color: "red"}}> Red Heading </h2>
+    </div>,
+    document.getElementById("root")
+);
+
+```
+
+Displaying greeting based on hours
+
+index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JSX</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script src="../src/index.js" type="text/JSX"></script>
+  </body>
+</html>
+```
+
+styles.css
+
+```css
+.heading {
+  font-size: 50px;
+  font-weight: bold;
+  border-bottom: 5px solid black;
+}
+
+```
+
+```javascript
+//Create a React app from scratch.
+//Show a single h1 that says "Good morning" if between midnight and 12PM.
+//or "Good Afternoon" if between 12PM and 6PM.
+//or "Good evening" if between 6PM and midnight.
+//Apply the "heading" style in the styles.css
+//Dynamically change the color of the h1 using inline css styles.
+//Morning = red, Afternoon = green, Night = blue.
+
+import React from "react";
+import ReactDOM from "react-dom";
+
+const date = new Date(2022, 1, 1, 1, 1);
+let hour = date.getHours();
+
+let greeting = "";
+const customStyle = {};
+
+if (hour >= 0 && hour < 12) {
+  greeting = "morning";
+  customStyle.color = "red";
+} else if (hour >= 12 && hour < 18) {
+  greeting = "afternoon";
+  customStyle.color = "green";
+} else {
+  greeting = "evening";
+  customStyle.color = "blue";
+}
+
+ReactDOM.render(
+  <h1 className="heading" style={customStyle}>
+    Good {greeting}{" "}
+  </h1>,
+  document.getElementById("root")
+);
+
+
+```
+
+#### React Component
+
+
+index.html
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JSX</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script src="../src/index.js" type="text/JSX"></script>
+  </body>
+</html>
+
+```
+
+index.js
+
+```javascript
+
+import React from "react";
+import ReactDOM from "react-dom";
+
+import App from "./components/App";
+
+ReactDOM.render(<App />, document.getElementById("root"));
+
+```
+
+/components/App.jsx
+/components/heading.jsx
+/components/ListComponent.jsx
+
+```jsx
+
+// App.jx
+
+import React from "react";
+import ReactDOM from "react-dom";
+
+import Heading from "./HeadingComponent";
+import List from "./ListComponent";
+
+export default function App() {
+  return (
+    <div>
+      <Heading />
+      <List />
+    </div>
+  );
+}
+
+```
+
+```jsx
+// HeadingComponent.jsx
+
+import React from "react";
+
+function Heading() {
+  return <h1>My Favourite Foods</h1>;
+}
+
+export default Heading;
+
+
+```
+
+```jsx
+
+// ListComponent.jsx
+
+import React from "react";
+
+export default function List() {
+  return (
+    <ul>
+      <li>Bacon</li>
+      <li>Jamon</li>
+      <li>Noodles</li>
+    </ul>
+  );
+}
+```
