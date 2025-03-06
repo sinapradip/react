@@ -499,3 +499,5 @@ export default function List() {
   );
 }
 ```
+
+### React Props
