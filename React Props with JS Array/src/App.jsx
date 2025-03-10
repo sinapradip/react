@@ -65,21 +65,6 @@ function App() {
           <p className="info">{contacts[3].email}</p>
         </div>
       </div>
-
-      <div className="card">
-        <div className="top">
-          <h2 className="name">{contacts[4].name}</h2>
-          <img
-            src={contacts[4].imgURL}
-            alt="avatar_img"
-            className="circle-img"
-          />
-        </div>
-        <div className="bottom">
-          <p className="info">{contacts[4].phone}</p>
-          <p className="info">{contacts[4].email}</p>
-        </div>
-      </div>
     </>
   );
 }
