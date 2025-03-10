@@ -1,6 +1,6 @@
 import React from "react";
 
-const date = new Date();
+const date = new Date(2022, 3, 1, 18);
 const currentTime = date.getHours();
 
 let greeting;

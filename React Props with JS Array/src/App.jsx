@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "./Card";
-import contacts from "../contacts";
+import contacts from "./contacts";
 
 function App() {
   return (
@@ -48,6 +48,36 @@ function App() {
         <div className="bottom">
           <p className="info">{contacts[2].phone}</p>
           <p className="info">{contacts[2].email}</p>
+        </div>
+      </div>
+
+      <div className="card">
+        <div className="top">
+          <h2 className="name">{contacts[3].name}</h2>
+          <img
+            src={contacts[3].imgURL}
+            alt="avatar_img"
+            className="circle-img"
+          />
+        </div>
+        <div className="bottom">
+          <p className="info">{contacts[3].phone}</p>
+          <p className="info">{contacts[3].email}</p>
+        </div>
+      </div>
+
+      <div className="card">
+        <div className="top">
+          <h2 className="name">{contacts[4].name}</h2>
+          <img
+            src={contacts[4].imgURL}
+            alt="avatar_img"
+            className="circle-img"
+          />
+        </div>
+        <div className="bottom">
+          <p className="info">{contacts[4].phone}</p>
+          <p className="info">{contacts[4].email}</p>
         </div>
       </div>
     </>
