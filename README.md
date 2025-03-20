@@ -36,7 +36,7 @@ export default function MyApp() {
 
 Notice that <MyButton/> starts with a capital letter. That’s how you know it’s a React component. React component names must always start with a capital letter, while HTML tags must be lowercase.
 
-![Button Component Demo](./images/demo.PNG)
+![Button Component Demo](./public/images/demo.PNG)
 
 The export default keywords specify the main component in the file. If you’re not familiar with some piece of JavaScript syntax, MDN and javascript.info have great references.
 
@@ -129,7 +129,7 @@ export default function Profile() {
 }
 ```
 
-![Concatenation Demo](./images/concatenation.PNG)
+![Concatenation Demo](./public/images/concatenation.PNG)
 
 In the above example, style={{}} is not a special syntax, but a regular {} object inside the style={ } JSX curly braces. You can use the style attribute when your styles depend on JavaScript variables.
 
