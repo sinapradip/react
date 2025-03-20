@@ -236,4 +236,92 @@ const sum = (...args) => {
 ## Summary
 
 Arrow functions provide a shorter syntax for writing functions and offer benefits such as lexical scoping of `this`. They are particularly useful for writing concise function expressions and maintaining the context of `this` in callbacks and other situations.
+
+
+## Array Methods (map, filter, reduce)
+
+Array methods such as `map`, `filter`, and `reduce` are essential tools in JavaScript for manipulating and transforming arrays. These methods are part of the functional programming paradigm and help in writing clean and concise code.
+
+## `map`
+
+The `map` method creates a new array populated with the results of calling a provided function on every element in the calling array.
+
+### Syntax
+
+
+```javascript
+const newArray = array.map(callback(element, index, array) {
+  // return value for newArray
+});
+```
+
+Example:
+
+```js
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map(num => num * 2);
+console.log(doubled); // [2, 4, 6, 8, 10]
+```
+```js
+const people = [
+  'Creola Katherine Johnson: mathematician',
+  'Mario José Molina-Pasquel Henríquez: chemist',
+  'Mohammad Abdus Salam: physicist',
+  'Percy Lavon Julian: chemist',
+  'Subrahmanyan Chandrasekhar: astrophysicist'
+];
+
+const listItems = people.map(person => <li>{person}</li>)
+
+return <ul>{listItems}</ul>;
+```
+
+
+## `filter`
+
+The `filter` method creates a new array with all elements that pass the test implemented by the provided function.
+
+### Syntax
+
+```javascript
+const newArray = array.filter(callback(element, index, array) {
+  // return true to keep the element, false otherwise
+});
+```
+
+### Example
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const evenNumbers = numbers.filter(num => num % 2 === 0);
+console.log(evenNumbers); // [2, 4]
+```
+
+## `reduce`
+
+The `reduce` method executes a reducer function (that you provide) on each element of the array, resulting in a single output value.
+
+### Syntax
+
+```javascript
+const result = array.reduce(callback(accumulator, currentValue, index, array) {
+  // return updated accumulator
+}, initialValue);
+```
+
+### Example
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((acc, num) => acc + num, 0);
+console.log(sum); // 15
+```
+
+## Summary
+
+- **`map`**: Transforms each element in an array and returns a new array.
+- **`filter`**: Filters elements in an array based on a condition and returns a new array.
+- **`reduce`**: Reduces an array to a single value by accumulating results.
+
+These array methods are powerful tools for working with arrays in JavaScript and are widely used in modern JavaScript development, including React.
 ```
