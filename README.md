@@ -1,3 +1,54 @@
+# Learn React in 2 months
+
+## **Month 1: React Fundamentals & Core Concepts**  
+
+### **Week 1: Introduction & Setup**  
+✅ **Day 1:** What is React? Why use it? SPA vs. MPA  
+✅ **Day 2:** Setting up a React project using Vite  
+✅ **Day 3:** JSX and rendering elements  
+✅ **Day 4:** Components (Functional & Class)  
+✅ **Day 5:** Props and Component Reusability  
+✅ **Day 6:** Hands-on: Create a simple Note Keeping App  
+✅ **Day 7:** Revise & Practice (Add a feature to the Keeper App)  
+
+💡 **Challenge:** Build a **static portfolio website** with reusable components (Header, Footer, About, Projects).  
+
+---  
+
+### **Week 2: State & Events**  
+✅ **Day 8:** State Management using `useState`  
+✅ **Day 9:** Handling Events & Event Binding  
+✅ **Day 10:** Forms in React (Controlled vs Uncontrolled Components)  
+✅ **Day 11:** Lists & Keys (Rendering multiple elements)  
+✅ **Day 12:** Conditional Rendering (`if`, ternary, `&&`)  
+✅ **Day 13:** Hands-on: Expand the Todo App (add editing functionality)  
+✅ **Day 14:** Debugging React apps (React DevTools)  
+
+💡 **Challenge:** Create a **counter app** with increment, decrement, and reset buttons.  
+
+---  
+
+### **Week 3: Hooks & Lifecycle**  
+✅ **Day 15:** Introduction to Hooks (`useState`, `useEffect`)  
+✅ **Day 16:** Effect Hook (`useEffect` with dependencies)  
+✅ **Day 17:** Component Lifecycle (Mounting, Updating, Unmounting)  
+✅ **Day 18:** Fetching data with `useEffect` (API calls)  
+✅ **Day 19:** Custom Hooks (When & Why?)  
+✅ **Day 20:** Hands-on: Build a simple weather app using an API  
+✅ **Day 21:** Revise & Optimize  
+
+💡 **Challenge:** Create a **searchable user list** that fetches and filters user data from an API.  
+
+---  
+
+### **Week 4: React Router & Performance Optimization**  
+✅ **Day 22:** React Router (`BrowserRouter`, `Routes`, `Link`, `useParams`)  
+✅ **Day 23:** Nested Routes, Protected Routes  
+✅ **Day 24:** Code Splitting & Lazy Loading  
+✅ **Day 25:** React.memo & `useCallback` for performance  
+✅ **Day 26:** Error Boundaries & Suspense  
+✅ **Day 27:** Hands
+
 # React
 
 ## What is React & Why React
