@@ -14,4 +14,5 @@ function add(n1, n2) {
     return n1 / n2;
   }
   
+  // Named Export
   export {add, multiply, subtract, divide};
