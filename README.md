@@ -1,47 +1,51 @@
 # Learn React in 2 months
 
-## **Month 1: React Fundamentals & Core Concepts**  
+## **Month 1: React Fundamentals & Core Concepts**
 
-### **Week 1: Introduction & Setup**  
+### **Week 1: Introduction & Setup**
+
 ✅ **Day 1:** What is React? Why use it? SPA vs. MPA  
 ✅ **Day 2:** Setting up a React project using Vite  
 ✅ **Day 3:** JSX and rendering elements  
 ✅ **Day 4:** Components (Functional & Class)  
 ✅ **Day 5:** Props and Component Reusability  
 ✅ **Day 6:** Hands-on: Create a simple Note Keeping App  
-✅ **Day 7:** Revise & Practice (Add a feature to the Keeper App)  
+✅ **Day 7:** Revise & Practice (Add a feature to the Keeper App)
 
-💡 **Challenge:** Build a **static portfolio website** with reusable components (Header, Footer, About, Projects).  
+💡 **Challenge:** Build a **static portfolio website** with reusable components (Header, Footer, About, Projects).
 
----  
+---
 
-### **Week 2: State & Events**  
+### **Week 2: State & Events**
+
 ✅ **Day 8:** State Management using `useState`  
 ✅ **Day 9:** Handling Events & Event Binding  
 ✅ **Day 10:** Forms in React (Controlled vs Uncontrolled Components)  
 ✅ **Day 11:** Lists & Keys (Rendering multiple elements)  
 ✅ **Day 12:** Conditional Rendering (`if`, ternary, `&&`)  
 ✅ **Day 13:** Hands-on: Expand the Todo App (add editing functionality)  
-✅ **Day 14:** Debugging React apps (React DevTools)  
+✅ **Day 14:** Debugging React apps (React DevTools)
 
-💡 **Challenge:** Create a **counter app** with increment, decrement, and reset buttons.  
+💡 **Challenge:** Create a **counter app** with increment, decrement, and reset buttons.
 
----  
+---
 
-### **Week 3: Hooks & Lifecycle**  
+### **Week 3: Hooks & Lifecycle**
+
 ✅ **Day 15:** Introduction to Hooks (`useState`, `useEffect`)  
 ✅ **Day 16:** Effect Hook (`useEffect` with dependencies)  
 ✅ **Day 17:** Component Lifecycle (Mounting, Updating, Unmounting)  
 ✅ **Day 18:** Fetching data with `useEffect` (API calls)  
 ✅ **Day 19:** Custom Hooks (When & Why?)  
 ✅ **Day 20:** Hands-on: Build a simple weather app using an API  
-✅ **Day 21:** Revise & Optimize  
+✅ **Day 21:** Revise & Optimize
 
-💡 **Challenge:** Create a **searchable user list** that fetches and filters user data from an API.  
+💡 **Challenge:** Create a **searchable user list** that fetches and filters user data from an API.
 
----  
+---
 
-### **Week 4: React Router & Performance Optimization**  
+### **Week 4: React Router & Performance Optimization**
+
 ✅ **Day 22:** React Router (`BrowserRouter`, `Routes`, `Link`, `useParams`)  
 ✅ **Day 23:** Nested Routes, Protected Routes  
 ✅ **Day 24:** Code Splitting & Lazy Loading  
@@ -55,7 +59,7 @@
 
 ###### Rewriting from React Docs [React](https://react.dev/learn)
 
-A Javascript Library for building user interfaces
+A JavaScript Library for building user interfaces
 React apps are made out of components. A component is a piece of the UI (user interface) that has its own logic and appearance. A component can be as small as a button, or as large as an entire page.
 
 ### React Components
@@ -64,9 +68,7 @@ React components are JavaScript functions that return markup:
 
 ```javascript
 function MyButton() {
-    return (
-        <button> This is a button </button>
-    )
+  return <button> This is a button </button>;
 }
 ```
 
@@ -77,10 +79,10 @@ import MyButton from './components/MyButton.jsx'
 
 export default function MyApp() {
     return (
-        <div> 
-            <h1> Welcome to my app </h1> 
+        <>
+            <h1> Welcome to my app </h1>
             <MyButton>
-        </div>
+        </>
     )
 }
 ```
@@ -95,7 +97,7 @@ The export default keywords specify the main component in the file. If you’re 
 
 The markup syntax you’ve seen above is called JSX. It is optional, but most React projects use JSX for its convenience. All of the tools we recommend for local development support JSX out of the box.
 
-JSX is stricter than HTML. You have to close tags like ```<br/>```. Your component also can’t return multiple JSX tags. You have to wrap them into a shared parent, like a ```<div>...</div>``` or an empty ```<>...</>``` wrapper:
+JSX is stricter than HTML. You have to close tags like `<br/>`. Your component also can’t return multiple JSX tags. You have to wrap them into a shared parent, like a `<div>...</div>` or an empty `<>...</>` wrapper:
 
 ```javascript
 function AboutPage() {
@@ -110,7 +112,7 @@ function AboutPage() {
 
 If you have a lot of HTML to port to JSX, you can use an [Online converter](https://transform.tools/html-to-jsx)
 
-### Adding styles 
+### Adding styles
 
 In React, you specify a CSS class with className. It works the same way as the HTML class attribute:
 
@@ -129,54 +131,46 @@ Then you write the CSS rules for it in a separate CSS file:
 
 React does not prescribe how you add CSS files. In the simplest case, you’ll add a <link> tag to your HTML. If you use a build tool or a framework, consult its documentation to learn how to add a CSS file to your project.
 
-### Displaying data 
+### Displaying data
 
 JSX lets you put markup into JavaScript. Curly braces let you “escape back” into JavaScript so that you can embed some variable from your code and display it to the user. For example, this will display user.name:
 
 ```javascript
-return (
-    <h1>
-        {user.name}
-    </h1>
-)
+return <h1>{user.name}</h1>;
 ```
 
-You can also “escape into JavaScript” from JSX attributes, but you have to use curly braces instead of quotes. For example, className="avatar" passes the "avatar" string as the CSS class, but src={user.imageUrl} reads the JavaScript user.imageUrl variable value, and then passes that value as the src attribute:
+You can also “escape into JavaScript” from JSX attributes, but you have to use curly braces instead of quotes. For example, className="avatar" passes the "avatar" string as the CSS class, but `src= {user.imageUrl}` reads the JavaScript ```user.imageUrl``` variable value, and then passes that value as the `src` attribute:
 
 ```javascript
-return (
-    <img
-        className = 'avatar' 
-        src = {user.imgUrl}
-    />
-)
+return <img className="avatar" src={user.imgUrl} />;
 ```
 
 You can put more complex expressions inside the JSX curly braces too, for example, string concatenation:
 
 ```javascript
 const user = {
-    name: 'Dayahang Rai',
-    imageUrl: 'https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQ5wQF2_FwzOL1U1q0JHoAODAVRAt2q3sAL2zD6raOjyH-b0gtvQP_1lGYr0B1V7819v6LL_Vg7ERx3DOA',
-    imageWidth: 150,
-    imageHeight: 100
-}
+  name: "Dayahang Rai",
+  imageUrl:
+    "https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQ5wQF2_FwzOL1U1q0JHoAODAVRAt2q3sAL2zD6raOjyH-b0gtvQP_1lGYr0B1V7819v6LL_Vg7ERx3DOA",
+  imageWidth: 150,
+  imageHeight: 100,
+};
 
 export default function Profile() {
-    return (
-        <>
-            <h1> {user.name + ' is a handsome Nepali actor.'} </h1>
-            <img
-                className = 'avatar' 
-                src = {user.imageUrl} 
-                alt = "Dayahang Rai" 
-                style = {{
-                    width: user.imageWidth,
-                    height: user.imageHeight
-                }}
-            />
-        </>
-    )
+  return (
+    <>
+      <h1> {user.name + " is a handsome Nepali actor."} </h1>
+      <img
+        className="avatar"
+        src={user.imageUrl}
+        alt="Dayahang Rai"
+        style={{
+          width: user.imageWidth,
+          height: user.imageHeight,
+        }}
+      />
+    </>
+  );
 }
 ```
 
@@ -184,7 +178,7 @@ export default function Profile() {
 
 In the above example, style={{}} is not a special syntax, but a regular {} object inside the style={ } JSX curly braces. You can use the style attribute when your styles depend on JavaScript variables.
 
-### Conditional rendering 
+### Conditional rendering
 
 In React, there is no special syntax for writing conditions. Instead, you’ll use the same techniques as you use when writing regular JavaScript code. For example, you can use an if statement to conditionally include JSX:
 
@@ -231,24 +225,20 @@ For example, let’s say you have an array of products:
 
 ```javascript
 const products = [
-  { title: 'Cabbage', id: 1 },
-  { title: 'Garlic', id: 2 },
-  { title: 'Apple', id: 3 },
-]
+  { title: "Cabbage", id: 1 },
+  { title: "Garlic", id: 2 },
+  { title: "Apple", id: 3 },
+];
 ```
 
 // Inside your component, use the map() function to transform an array of products into an array of <li> items:
 
 ```javascript
-const listItems = products.map(product =>
-    <li key={product.id}>
-        {product.title}
-    </li>
-)
+const listItems = products.map((product) => (
+  <li key={product.id}>{product.title}</li>
+));
 
-return (
-    <ul>{listItems}</ul>
-)
+return <ul>{listItems}</ul>;
 ```
 
 Notice how list has a key attribute. For each item in a list, you should pass a string or a number that uniquely identifies that item among its siblings. Usually, a key should be coming from your data, such as a database ID. React uses your keys to know what happened if you later insert, delete, or reorder the items.
@@ -266,7 +256,7 @@ Practice React on this website.
 
 JSX = JavaScript XML
 
-Babel is a Javascript Compiler that powers JSX file by converting next generation javascript code to browser-compatible JavaScript code.
+Babel is a JavaScript Compiler that powers JSX file by converting next generation JavaScript code to browser-compatible JavaScript code.
 
 Challenge 1
 
@@ -285,18 +275,16 @@ ReactDOM.render(
   </div>,
   document.getElementById("root")
 );
-
 ```
 
-### Adding JavaScript expression using 
+### Adding JavaScript expression using
 
-Attributes of HTML element are camelcased in React with convention
-Eg: class = 'container' becomes className = 'container' & so on.
+Attributes of HTML element are camelCase in React with convention
+Example: class = 'container' becomes className = 'container' & so on.
 
-Introduction to jsx
+Introduction to JSX
 
 ```javascript
-
 import React from "react";
 import ReactDOM from "react-dom";
 
@@ -307,7 +295,6 @@ ReactDOM.render(
   </div>,
   document.getElementById("root")
 );
-
 ```
 
 Adding dynamic date object in HTML
@@ -331,8 +318,6 @@ ReactDOM.render(
   </div>,
   document.getElementById("root")
 );
-
-
 ```
 
 Challenge
@@ -361,8 +346,6 @@ ReactDOM.render(
   </div>,
   document.getElementById("root")
 );
-
-
 ```
 
 Class based styling is recommended over inline styling.
@@ -370,7 +353,6 @@ Class based styling is recommended over inline styling.
 #### Inline styling
 
 ```javascript
-
 import React from "react";
 import ReactDOM from "react-dom";
 
@@ -380,16 +362,15 @@ const customStyle = {
   border: "2px solid blue",
 };
 
-customStyle.color = "green"
+customStyle.color = "green";
 
 ReactDOM.render(
-    <div>
-        <h1 style={customStyle}>Hello World!</h1>
-        <h2 style = {{color: "red"}}> Red Heading </h2>
-    </div>,
-    document.getElementById("root")
+  <div>
+    <h1 style={customStyle}>Hello World!</h1>
+    <h2 style={{ color: "red" }}> Red Heading </h2>
+  </div>,
+  document.getElementById("root")
 );
-
 ```
 
 Displaying greeting based on hours
@@ -419,7 +400,6 @@ styles.css
   font-weight: bold;
   border-bottom: 5px solid black;
 }
-
 ```
 
 ```javascript
@@ -457,16 +437,13 @@ ReactDOM.render(
   </h1>,
   document.getElementById("root")
 );
-
-
 ```
 
 #### React Component
 
-
 index.html
-```html
 
+```html
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -479,28 +456,20 @@ index.html
     <script src="../src/index.js" type="text/JSX"></script>
   </body>
 </html>
-
 ```
 
 index.js
 
 ```javascript
-
 import React from "react";
 import ReactDOM from "react-dom";
 
 import App from "./components/App";
 
 ReactDOM.render(<App />, document.getElementById("root"));
-
 ```
 
-/components/App.jsx
-/components/heading.jsx
-/components/ListComponent.jsx
-
 ```jsx
-
 // App.jx
 
 import React from "react";
@@ -517,7 +486,6 @@ export default function App() {
     </div>
   );
 }
-
 ```
 
 ```jsx
@@ -530,12 +498,9 @@ function Heading() {
 }
 
 export default Heading;
-
-
 ```
 
 ```jsx
-
 // ListComponent.jsx
 
 import React from "react";
@@ -551,4 +516,101 @@ export default function List() {
 }
 ```
 
+File Path
+
+```plaintext
+/components/App.jsx
+/components/heading.jsx
+/components/ListComponent.jsx
+```
+
 ### React Props
+
+
+# React Props (Properties)
+
+## What are Props?
+
+Props are **read-only attributes** in React that allow you to pass data from a **parent component** to a **child component**. They make components reusable and dynamic by enabling customization.
+
+---
+
+## Key Features:
+
+1. **Immutable**: Props cannot be modified by the child component.
+2. **Passed as Attributes**: Props are passed as attributes in JSX.
+3. **Accessed via `props`**: In functional components, props are accessed as function arguments.
+
+---
+
+## Example from Your Folder:
+
+### Parent Component (`index.js`):
+
+```javascript
+
+import React from "react";
+import ReactDOM from "react-dom";
+
+function Card(props) {
+  return (
+    <>
+      <h2>{props.name}</h2>
+      <img src={props.img} alt="avatar_img" />
+      <p>{props.tel}</p>
+      <p>{props.email}</p>
+    </>
+  );
+}
+
+ReactDOM.render(
+  <div>
+    <h1>My Contacts</h1>
+    <Card
+      name="Beyonce"
+      img="https://blackhistorywall.files.wordpress.com/2010/02/picture-device-independent-bitmap-119.jpg"
+      tel="+123 456 789"
+      email="b@beyonce.com"
+    />
+    <Card
+      name="Jack Bauer"
+      img="https://pbs.twimg.com/profile_images/625247595825246208/X3XLea04_400x400.jpg"
+      tel="+7387384587"
+      email="jack@nowhere.com"
+    />
+  </div>,
+  document.getElementById("root")
+);
+```
+
+### Explanation:
+
+1. **Parent Component**:
+
+   - The `Card` component is used multiple times with different props (`name`, `img`, `tel`, `email`).
+   - Props are passed as attributes in JSX.
+
+2. **Child Component (`Card`)**:
+   - The `Card` component receives props as a parameter.
+   - Props are used to dynamically render the content.
+
+---
+
+## Why Use Props?
+
+- **Reusability**: Create one component and reuse it with different data.
+- **Dynamic Rendering**: Pass dynamic data to components.
+
+---
+
+## Best Practices:
+
+1. Always use **unique keys** when rendering lists of components.
+2. Use **PropTypes** for type-checking props (optional).
+
+---
+
+## References:
+
+- [React Props Documentation](https://reactjs.org/docs/components-and-props.html)
+- [My Practice Example](./3.React%20Props/src/index.js)
