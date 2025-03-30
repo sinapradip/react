@@ -3,14 +3,13 @@ import people from "../assets/people";
 
 export default function FilteredTable() {
   // Filter people born after 1920
-const filteredPeople = people.filter((person) => person.birthYear > 1920);
+  const filteredPeople = people.filter((person) => person.birthYear > 1920);
   return (
     <>
       <br></br>
       <h5>
-        using <strong>filter()</strong> method
+        using <strong>filter()</strong> method to display scientist born after 1920 only
       </h5>
-      <h5>Showing Scientist born after 1920 only</h5>
       <br></br>
       <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
