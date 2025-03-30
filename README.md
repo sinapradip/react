@@ -594,23 +594,153 @@ ReactDOM.render(
    - The `Card` component receives props as a parameter.
    - Props are used to dynamically render the content.
 
----
 
 ## Why Use Props?
 
 - **Reusability**: Create one component and reuse it with different data.
 - **Dynamic Rendering**: Pass dynamic data to components.
 
----
 
 ## Best Practices:
 
 1. Always use **unique keys** when rendering lists of components.
 2. Use **PropTypes** for type-checking props (optional).
 
----
 
 ## References:
 
 - [React Props Documentation](https://reactjs.org/docs/components-and-props.html)
 - [My Practice Example](./3.React%20Props/src/index.js)
+
+---
+
+# Usage of `map()` Function in React
+
+The `map()` function is a powerful JavaScript array method that is widely used in React to render lists of components dynamically. It allows you to iterate over an array and transform each element into a React component.
+
+---
+
+## Key Features of `map()` in React:
+1. **Dynamic Rendering**: Render lists of components based on data.
+2. **Reusability**: Use the same component for multiple data entries.
+3. **Key Prop**: Each rendered component must have a unique `key` prop for efficient updates.
+
+---
+
+## Example from Your Folder:
+
+### File Structure:
+- `App.jsx`
+- `Card.jsx`
+- `contacts.js`
+
+### Data File (`contacts.js`):
+```javascript
+const contacts = [
+  {
+    id: 1,
+    name: "Beyonce",
+    img: "https://blackhistorywall.files.wordpress.com/2010/02/picture-device-independent-bitmap-119.jpg",
+    tel: "+123 456 789",
+    email: "b@beyonce.com",
+  },
+  {
+    id: 2,
+    name: "Jack Bauer",
+    img: "https://pbs.twimg.com/profile_images/625247595825246208/X3XLea04_400x400.jpg",
+    tel: "+7387384587",
+    email: "jack@nowhere.com",
+  },
+  {
+    id: 3,
+    name: "Chuck Norris",
+    img: "https://i.pinimg.com/originals/2e/24/0f/2e240f7a2c3c6c9b3f6a4f2a4e9b5c6c.jpg",
+    tel: "+987 654 321",
+    email: "chuck@norris.com",
+  },
+];
+
+export default contacts;
+
+
+/// Parent Component (`App.jsx`):
+
+import React from "react";
+import Card from "./components/Card";
+import contacts from "./assets/contacts";
+
+function App() {
+  return (
+    <div>
+      <h1 className="heading">My Contacts</h1>
+      {contacts.map((contact) => (
+        <Card
+          key={contact.id}
+          name={contact.name}
+          img={contact.img}
+          tel={contact.tel}
+          email={contact.email}
+        />
+      ))}
+    </div>
+  );
+}
+
+export default App;
+
+
+// Child Component (`Card.jsx`):
+
+import React from "react";
+
+function Card(props) {
+  return (
+    <div className="card">
+      <h2>{props.name}</h2>
+      <img src={props.img} alt="avatar" />
+      <p>{props.tel}</p>
+      <p>{props.email}</p>
+    </div>
+  );
+}
+
+export default Card;
+```
+
+---
+
+## Explanation:
+
+1. **Data Source**:
+   - The `contacts.js` file contains an array of objects, each representing a contact with properties like `name`, `img`, `tel`, and `email`.
+
+2. **Parent Component (`App.jsx`)**:
+   - The `map()` function is used to iterate over the `contacts` array.
+   - For each contact, a `Card` component is rendered with props (`name`, `img`, `tel`, `email`) passed dynamically.
+   - The `key` prop is added to uniquely identify each `Card` component.
+
+3. **Child Component (`Card.jsx`)**:
+   - The `Card` component receives props and renders the contact details dynamically.
+
+---
+
+## Why Use `map()` in React?
+
+- **Efficiency**: React uses the `key` prop to optimize rendering by identifying which components need to be updated.
+- **Dynamic Content**: Easily render lists of components based on data.
+- **Reusability**: Use the same component for different data entries.
+
+---
+
+## Best Practices:
+1. Always provide a **unique `key` prop** for each element rendered using `map()`.
+2. Keep the `map()` logic in the parent component for better separation of concerns.
+3. Avoid inline functions inside `map()` for performance optimization.
+
+---
+
+## References:
+- [React Documentation: Lists and Keys](https://reactjs.org/docs/lists-and-keys.html)
+- [MDN Documentation: Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+
+---

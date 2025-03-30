@@ -5,12 +5,13 @@ import ReactDOM from "react-dom";
 // importing with different name because import creates a new variable
 
 import piekovalue from "./math";
-import { doublePi, triplePi } from "./math";
+import pi, { doublePi, triplePi } from "./math";
 import { add, multiply, subtract, divide } from "./calculator";
 
 ReactDOM.render(
   <ul>
     <li>{piekovalue}</li>
+    <li>{pi}</li>
     <li>{doublePi()}</li>
     <li>{triplePi()}</li>
   </ul>,

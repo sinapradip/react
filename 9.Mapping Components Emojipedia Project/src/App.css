@@ -29,11 +29,15 @@ h1 span {
 }
 
 .dictionary > .term {
-  text-align: center;
+  text-align: left;
+  min-width: 20rem;
   max-width: 20rem;
+  min-height: 20rem;
+  max-height: 20rem;
   margin-bottom: 3rem;
+  gap: 2rem;
   padding: 2rem;
-  border-radius: 3px;
+  border-radius: 10px;
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05), 0 5px 20px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   transition: all 100ms ease-in-out;
@@ -80,4 +84,15 @@ dd dl {
 
 dd dl .term {
   margin-bottom: 1rem;
+}
+
+.title {
+  border-radius: 30px ;
+}
+
+.emoji-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
