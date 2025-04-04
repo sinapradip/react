@@ -744,3 +744,45 @@ export default Card;
 - [MDN Documentation: Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 
 ---
+
+## Production Build Vite Project
+
+What happens when you run ```npm run build```
+
+```"build": "vite build"```
+
+When you run `vite build` in your Vite project, the following happens:
+
+### 1. **Production Build Process**
+   - Vite bundles your application into optimized static files for production.
+   - It performs the following optimizations:
+     - **Minification**: JavaScript, CSS, and HTML files are minified to reduce file size.
+     - **Tree Shaking**: Removes unused code to make the bundle smaller.
+     - **Code Splitting**: Splits the code into smaller chunks for better performance.
+     - **Asset Optimization**: Optimizes images, fonts, and other assets.
+     - **Environment Variables**: Uses `process.env.NODE_ENV=production` to enable production-specific behavior.
+
+### 2. **Output Files**
+   - The build output is placed in the `dist/` folder (default location).
+   - The `dist/` folder contains:
+     - **`index.html`**: The entry point for your app.
+     - **JavaScript files**: Bundled and minified JavaScript files (e.g., `assets/index-<hash>.js`).
+     - **CSS files**: Extracted and minified CSS files (e.g., `assets/index-<hash>.css`).
+     - **Static assets**: Any images, fonts, or other files referenced in your app.
+
+### 3. **Deployment-Ready**
+   - The files in the `dist/` folder are static and can be deployed to any web server (e.g., Apache, Nginx, Vercel, Netlify).
+   - These files no longer rely on the development server or WebSocket connections.
+
+### Example of the `dist/` folder structure:
+```
+dist/
+├── index.html
+├── assets/
+│   ├── index-abc123.js
+│   ├── index-abc123.css
+│   ├── logo-xyz456.png
+```
+
+### Summary:
+Running `vite build` prepares your project for production by creating an optimized, static version of your app in the `dist/` folder. These files are ready to be deployed to a live server.
