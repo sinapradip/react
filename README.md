@@ -786,3 +786,72 @@ dist/
 
 ### Summary:
 Running `vite build` prepares your project for production by creating an optimized, static version of your app in the `dist/` folder. These files are ready to be deployed to a live server.
+
+## Conditional rendering in React using Ternary Operator
+
+### Example Code
+```javascript
+import React from "react";
+
+function App() {
+  const isLoggedIn = true; // Change this to false to see the other condition
+
+  return (
+    <div className="container">
+      {isLoggedIn ? (
+        <h1>Welcome back, User!</h1>
+      ) : (
+        <button>Login</button>
+      )}
+    </div>
+  );
+}
+
+export default App;
+```
+
+### Explanation
+1. **Condition**: `isLoggedIn` is a boolean variable that determines what to render.
+2. **Ternary Operator**:
+   - If `isLoggedIn` is `true`, it renders `<h1>Welcome back, User!</h1>`.
+   - If `isLoggedIn` is `false`, it renders a `<button>Login</button>`.
+
+### Output
+- If `isLoggedIn = true`:  
+  `Welcome back, User!`
+- If `isLoggedIn = false`:  
+  A button labeled `Login`.
+
+  ### Use of && operator
+
+  In React, the `&&` (logical AND) operator can be used for conditional rendering when you only need to render something if a condition is `true`. If the condition is `false`, nothing will be rendered.
+
+### Example Code
+```javascript
+import React from "react";
+
+function App() {
+  const isAdmin = true; // Change this to false to see the other condition
+
+  return (
+    <div className="container">
+      <h1>Welcome to the Dashboard</h1>
+      {isAdmin && <button>Manage Users</button>}
+    </div>
+  );
+}
+
+export default App;
+```
+
+### Explanation
+1. **Condition**: `isAdmin` is a boolean variable.
+2. **Logical AND (`&&`)**:
+   - If `isAdmin` is `true`, the `<button>` element is rendered.
+   - If `isAdmin` is `false`, nothing is rendered.
+
+### Output
+- If `isAdmin = true`:  
+  The output will include a button labeled `Manage Users`.
+- If `isAdmin = false`:  
+  The button will not be rendered, and only the heading will be displayed.
