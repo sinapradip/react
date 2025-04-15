@@ -1,7 +1,7 @@
 import React from "react";
 import RegisterForm from "./components/RegisterForm";
 
-var userIsRegistered = true;
+var userIsRegistered = false;
 
 function App() {
   return (

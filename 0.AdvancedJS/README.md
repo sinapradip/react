@@ -325,3 +325,48 @@ console.log(sum); // 15
 
 These array methods are powerful tools for working with arrays in JavaScript and are widely used in modern JavaScript development, including React.
 ```
+
+In the provided code, the functionality to increment the `count` by 1 each time the button is clicked is achieved using **React's `useState` hook**. Here's a breakdown of how it works:
+
+### Key Components:
+1. **`useState` Hook**:
+   ```javascript
+   const [count, setCount] = useState(0);
+   ```
+   - `useState` is a React hook that allows you to add state to a functional component.
+   - It initializes the `count` state variable with a value of `0`.
+   - `setCount` is a function provided by `useState` to update the value of `count`.
+
+2. **Button Click Handler**:
+   ```javascript
+   <button onClick={() => setCount((count) => count + 1)}>
+     count is {count}
+   </button>
+   ```
+   - The `onClick` event is triggered when the button is clicked.
+   - The `setCount` function is called with a callback function:
+     ```javascript
+     (count) => count + 1
+     ```
+     - This callback receives the current value of `count` and increments it by 1.
+   - React re-renders the component with the updated `count` value.
+
+3. **Dynamic Rendering of `count`**:
+   ```javascript
+   count is {count}
+   ```
+   - The current value of `count` is displayed dynamically inside the button using JSX.
+
+### How It Works:
+1. Initially, `count` is set to `0` (as defined by `useState(0)`).
+2. When the button is clicked:
+   - The `onClick` handler calls `setCount`, which updates the `count` state by incrementing it by 1.
+   - React detects the state change and re-renders the component.
+3. The updated `count` value is displayed in the button text.
+
+### Example Flow:
+- Initial render: `count is 0`.
+- Button clicked once: `count` becomes `1`, and the button displays `count is 1`.
+- Button clicked again: `count` becomes `2`, and the button displays `count is 2`.
+
+This is how `useState`, `count`, and `setCount` work together to manage and update the state dynamically in response to user interactions.
