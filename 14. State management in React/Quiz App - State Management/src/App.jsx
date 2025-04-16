@@ -79,7 +79,7 @@ export default function Form() {
           disabled={answer.length === 0 || status === "submitting"}
           title={
             status === "submitting"
-              ? "Submitting your answer..."
+              ? "Submitting your answer..." 
               : "Submit your answer"
           }
         >
