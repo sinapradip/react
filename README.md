@@ -855,3 +855,58 @@ export default App;
   The output will include a button labeled `Manage Users`.
 - If `isAdmin = false`:  
   The button will not be rendered, and only the heading will be displayed.
+
+## **React State Management**
+State management in React refers to the process of managing the dynamic data of a component. State allows React components to respond to user input, changes in data, or other events by re-rendering the UI. Each component can have its own state, and changes to the state trigger React to update the DOM efficiently.
+
+---
+
+### **`useState()` React Hook**
+The `useState()` hook is a built-in React hook that allows functional components to manage state. It provides a way to declare state variables and update them dynamically.
+
+#### **Syntax:**
+```javascript
+const [state, setState] = useState(initialValue);
+```
+
+- **`state`**: The current state value.
+- **`setState`**: A function to update the state.
+- **`initialValue`**: The initial value of the state.
+
+#### **Example:**
+```javascript
+import React, { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+
+export default Counter;
+```
+
+#### **How It Works:**
+1. **Initial State**: `useState(0)` initializes the `count` state variable with a value of `0`.
+2. **Updating State**: Calling `setCount(count + 1)` updates the state and triggers a re-render of the component.
+3. **Reactivity**: The updated `count` value is reflected in the UI.
+
+---
+
+### **Key Features of `useState()`**
+- **Local State**: State is scoped to the component where `useState()` is used.
+- **Reactivity**: Changes to state automatically update the UI.
+- **Multiple States**: You can use multiple `useState()` calls to manage different pieces of state in a single component.
+
+---
+
+### **When to Use `useState()`**
+- To manage simple, local state in functional components.
+- For dynamic data like form inputs, counters, toggles, etc.
+
+`useState()` is a fundamental hook for managing state in React and is often combined with other hooks like `useEffect()` for more complex state management.
