@@ -17,7 +17,7 @@ function App() {
     setFullName((prevFullName) => {
       if (name === "fName") {
         return {
-          firstName: event.target.value,
+          firstName: value,
           lastName: prevFullName.lastName,
         };
       } else if (name === "lName") {
