@@ -2,8 +2,15 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
+
+  // Using useState to manage complex state
+  // The state is an object with two properties: firstName and lastName
   const [fullName, setFullName] = useState({ firstName: "", lastName: "" });
 
+  // The handleChange function updates the state based on the input field that is changed
+  // It uses the name attribute of the input field to determine which part of the state to update
+  // The function takes the event object as an argument and destructures it to get the name and value
+  // It then uses the setFullName function to update the state
   function handleChange(event) {
     const { name, value } = event.target;
 
