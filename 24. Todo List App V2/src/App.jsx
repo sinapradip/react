@@ -12,9 +12,20 @@ function App() {
 
   function addItem() {
     setItems((prevItem) => {
-      return [...prevItem, inputText]
+      return [...prevItem, inputText];
     });
     setInputText("");
+  }
+
+  function strikeThrough(e) {
+    // strike and unstrike line through using the checkbox
+    const li = e.target.parentElement;
+    const clickedItem = e.target;
+    if (clickedItem.checked) {
+      li.style.textDecoration = "line-through";
+    } else {
+      li.style.textDecoration = "none";
+    }
   }
 
   return (
@@ -31,7 +42,17 @@ function App() {
       <div>
         <ul>
           {items.map((todoItem) => {
-            return <li>{todoItem}</li>;
+            return (
+              <>
+                <div className="note-row">
+                  <div className="note-row-content">
+                    <li>{todoItem}</li>
+                    <input type="checkbox" onClick={strikeThrough} />
+                  </div>
+                  <i class="fas fa-band-aid"></i>
+                </div>
+              </>
+            );
           })}
         </ul>
       </div>

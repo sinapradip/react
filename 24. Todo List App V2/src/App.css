@@ -13,8 +13,8 @@ body {
 }
 
 .container {
-  width: 100%;
-  height: auto;
+  width: 100vw;
+  height: 95vh;
   min-height: 500px;
   max-width: 500px;
   min-width: 250px;
@@ -55,6 +55,25 @@ body {
   margin-bottom: 20px;
 }
 
+.note-row {
+  padding: 0 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.note-row-content {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  text-wrap: nowrap;
+}
+.note-row input {
+  width: 20px;
+  height: 20px;
+}
+
 button {
   padding: 0;
   border: none;
@@ -65,6 +84,7 @@ button {
   background-color: #ffeaa7;
 }
 button span {
+  color: hsl(198, 1%, 29%);
   background: #f1f5f8;
   display: block;
   padding: 0.5rem 1rem;
